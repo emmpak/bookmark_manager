@@ -4,5 +4,5 @@ source "https://rubygems.org"
  gem "capybara"
  gem 'sinatra'
  gem 'data_mapper'
- gem 'dm-migrations'
  gem 'dm-postgres-adapter'
+ gem 'database_cleaner'
