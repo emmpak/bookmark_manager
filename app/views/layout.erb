@@ -4,8 +4,11 @@
     <title>
       <title>Bookmark Manager</title>
     </head>
-
     <body>
+
+      <% if flash[:wrong_password] %>
+        <div id='wrong_password'><%= flash[:wrong_password] %></div>
+      <% end %>
       <% if current_user %>
         Welcome, <%= current_user.email %>
         <% end %>

@@ -7,6 +7,7 @@ source "https://rubygems.org"
  gem 'rake'
  gem 'bcrypt'
  gem 'pry'
+ gem 'sinatra-flash'
 
 group :test do
   gem "rspec"
