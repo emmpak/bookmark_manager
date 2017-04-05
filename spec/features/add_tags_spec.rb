@@ -1,6 +1,5 @@
 feature 'add tags' do
-  xscenario 'to links' do
-    # Tag.create(name: 'search', link_id: 'Makers Academy')
+  scenario 'to links' do
     visit('/links')
     click_button 'new'
     fill_in 'Title', with: 'Google'
@@ -8,7 +7,7 @@ feature 'add tags' do
     fill_in 'Tag', with: 'search'
     click_button 'submit'
     within 'ul#links' do
-      expect(page).to have_content('Google www.google.com search')
+      expect(page).to have_content('search')
     end
   end
 end
