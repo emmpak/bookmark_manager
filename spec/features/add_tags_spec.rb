@@ -1,5 +1,5 @@
 feature 'add tags' do
-  scenario 'to links' do
+  xscenario 'to links' do
     # Tag.create(name: 'search', link_id: 'Makers Academy')
     visit('/links')
     click_button 'new'
