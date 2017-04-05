@@ -22,5 +22,11 @@ class BookmarkManage < Sinatra::Base
     erb(:'links/input')
   end
 
+  get '/tags/:name' do
+    tag = Tag.first(name: params[:name])
+    @links = tag ? tag.links : []
+    erb(:'tags/bubbles')
+  end
+
 
 end
