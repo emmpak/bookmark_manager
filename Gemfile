@@ -5,6 +5,8 @@ source "https://rubygems.org"
  gem 'dm-postgres-adapter'
  gem 'database_cleaner'
  gem 'rake'
+ gem 'bcrypt'
+ gem 'pry'
 
 group :test do
   gem "rspec"
