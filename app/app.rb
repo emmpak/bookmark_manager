@@ -33,8 +33,6 @@ class BookmarkManage < Sinatra::Base
     end
   end
 
-
-
   get '/links' do
     @user = User.all.last
     @links = Link.all
