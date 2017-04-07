@@ -39,4 +39,16 @@ feature 'User Signs up' do
     expect(current_path).to eq('/users')
     expect(User.count).to eq 0
   end
+
+  scenario 'signup with an existing email' do
+    visit '/users/new'
+    User.create(email: "bob@gmail.com")
+    fill_in 'email', with: "bob@gmail.com"
+    fill_in 'password', with: '1234'
+    fill_in 'password_confirmation', with: '1234'
+    click_button 'Submit'
+    expect(current_path).to eq('/users')
+    expec(page).to have_contetn('An account with this email already exists')
+    expect(User.count).to eq 1
+  end
 end
