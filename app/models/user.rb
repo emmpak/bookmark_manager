@@ -6,7 +6,7 @@ class User
   include DataMapper::Resource
 
   property :id,               Serial
-  property :email,            String, required: true, format: :email_address
+  property :email,            String, required: true, format: :email_address, unique: true, :messages => { :is_unique => "An account with this email already exists"}
   property :password_digest,  Text
   attr_reader :password
   attr_accessor :password_confirmation

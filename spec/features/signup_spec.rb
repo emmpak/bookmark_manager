@@ -17,7 +17,7 @@ feature 'User Signs up' do
     fill_in 'password_confirmation', with: '12345'
     click_button 'Submit'
     expect(current_path).to eq('/users')
-    expect(page).to have_content('Password and confirmation password do not match')
+    expect(page).to have_content('Password does not match the confirmation')
     expect(User.count).to eq 0
   end
 
@@ -48,7 +48,7 @@ feature 'User Signs up' do
     fill_in 'password_confirmation', with: '1234'
     click_button 'Submit'
     expect(current_path).to eq('/users')
-    expec(page).to have_contetn('An account with this email already exists')
+    expect(page).to have_content('An account with this email already exists')
     expect(User.count).to eq 1
   end
 end
